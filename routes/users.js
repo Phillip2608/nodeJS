@@ -13,11 +13,7 @@ module.exports = (app) => {
             if(err){
                 app.utils.error.send(err, req, res);
             }else{
-                res.statusCode = 200;
-                res.setHeader("Content-Type", "application/json");
-                res.json({
-                    users
-                });
+                res.status(200).json(users);
             }
         });
     });
@@ -32,5 +28,20 @@ module.exports = (app) => {
             }
         });
 
+    });
+                                    //email
+                                    //name
+    let routeId = app.route('/users/:id');
+
+    routeId.get((req, res) => {
+                                 //email   
+                                //name
+        db.findOne({_id:req.params.id}).exec((err, user)=>{
+            if(err){
+                app.utils.error.send(err, req, res);
+            }else{
+                res.status(200).json(user);
+            }
+        });
     });
 };
