@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Phillip2608/nodeJS#readme",
   "dependencies": {
+    "consign": "^0.1.6",
     "express": "^4.18.1",
     "nodemon": "^2.0.16"
   }
